@@ -1,0 +1,62 @@
+{
+  "groups": {
+    "member": {
+      "nodes": [
+        { "key": "weight.10", "value": true },
+        { "key": "group.default", "value": true },
+        { "key": "prefix.20.&7[Member] ", "value": true },
+        { "key": "meta.rank.member", "value": true },
+        { "key": "essentials.kit", "value": true },
+        { "key": "essentials.kit.vip", "value": true, "expiry": 4102444800 },
+        { "key": "essentials.old", "value": true, "expiry": 1000 },
+        { "key": "r=^essentials\\..*$", "value": true },
+        { "key": "essentials.fly", "value": true, "context": { "world": "creative_world" } },
+        { "key": "essentials.world", "value": true, "context": { "world": ["a", "b"] } },
+        { "key": "essentials.bad", "value": true, "context": { "custom-key": "x" } },
+        { "key": "essentials.server", "value": true, "context": { "server": "lobby" } },
+        { "key": "essentials.server2", "value": true, "context": { "server": "3" } },
+        { "key": "essentials.global", "value": true, "context": { "server": "global" } },
+        { "key": "essentials.gm", "value": true, "context": { "gamemode": "creative", "world": "w" } },
+        { "key": "essentials.dim", "value": false, "context": { "dimension-type": "the_nether" } }
+      ]
+    },
+    "admin": {
+      "nodes": [
+        { "key": "group.member", "value": true },
+        { "key": "weight.100", "value": true },
+        { "key": "meta.title.Chief\\.Admin", "value": true },
+        { "key": "suffix.5.<3", "value": true },
+        { "key": "*", "value": true },
+        { "key": "displayname.Administrator", "value": true }
+      ]
+    }
+  },
+  "users": {
+    "9F9A1D7A-0000-4000-8000-000000000001": {
+      "username": "Steve",
+      "primaryGroup": "admin",
+      "nodes": [
+        { "key": "group.admin", "value": true },
+        { "key": "group.member", "value": true, "expiry": 4102444800, "context": { "server": "3" } },
+        { "key": "essentials.god", "value": true }
+      ]
+    },
+    "11111111-2222-4333-8444-555555555555": {
+      "username": "Alex",
+      "primaryGroup": "member",
+      "nodes": [
+        { "key": "essentials.x", "value": true }
+      ]
+    },
+    "00000000-0000-4000-8000-000000000001": {
+      "username": "Nobody",
+      "primaryGroup": "default",
+      "nodes": [
+        { "key": "group.default", "value": true }
+      ]
+    }
+  },
+  "tracks": {
+    "staff": { "groups": ["member", "admin", "ghost"] }
+  }
+}

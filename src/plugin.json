@@ -1,0 +1,9 @@
+{
+  "id": "charter",
+  "name": "Charter",
+  "version": "0.1.0",
+  "api": "1.0",
+  "main": "Charter.CharterPlugin",
+  "description": "Permissions: groups, inheritance, contexts, temporary grants, tracks, meta and prefixes, audit log, imports",
+  "authors": ["Ramjet"]
+}

@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "groups": {
+    "default": {
+      "weight": 0,
+      "permissions": {
+        "minecraft.command.help": true
+      }
+    },
+    "Mod": {
+      "weight": 50,
+      "inherits": ["default"],
+      "prefix": "&c[Mod] ",
+      "suffix": "",
+      "permissions": {
+        "charter.admin.view": true,
+        "-minecraft.command.op": true,
+        "homes.*": true
+      }
+    },
+    "admin": {
+      "weight": 100,
+      "inherits": ["Mod"],
+      "permissions": {
+        "*": true
+      }
+    },
+    "builder": {
+      "weight": 20,
+      "permissions": {
+        "worldedit.*": true
+      },
+      "unknownKey": 5
+    }
+  },
+  "users": {
+    "069A79F4-44E9-4726-A5BE-FCA90E38AAF5": {
+      "name": "Notch",
+      "groups": ["ADMIN"],
+      "permissions": {
+        "-minecraft.command.stop": true,
+        "fly": true
+      }
+    },
+    "NOTAUUID": {
+      "name": "Nobody",
+      "groups": [],
+      "permissions": {}
+    }
+  },
+  "comment": "hand-written test fixture"
+}

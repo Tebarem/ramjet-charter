@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Out-of-server compile check only: the server loads src/ as a source plugin (deployed as plugins/charter/). Set RAMJET_HOME to the engine build output (build/bin). -->
+  <PropertyGroup>
+    <McApiDll>$(RAMJET_HOME)/dotnet/Mc.Scripting.Api.dll</McApiDll>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <Import Project="$(RAMJET_HOME)/../../src/scripting/managed/Mc.Scripting.Plugin.props" Condition="Exists('$(RAMJET_HOME)/../../src/scripting/managed/Mc.Scripting.Plugin.props')" />
+  <ItemGroup>
+    <Compile Remove="obj/**;bin/**" />
+    <None Remove="data/**" />
+  </ItemGroup>
+</Project>

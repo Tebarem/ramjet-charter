@@ -1,10 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <!-- Out-of-server compile check only: the server loads src/ as a source plugin (deployed as plugins/charter/). Set RAMJET_HOME to the engine build output (build/bin). -->
+  <!-- Out-of-server compile check against the public Ramjet.Api package (nuget.org): the server loads src/ as a source plugin
+       (deployed as plugins/charter/); this project only checks that it compiles against the published API. -->
   <PropertyGroup>
-    <McApiDll>$(RAMJET_HOME)/dotnet/Mc.Scripting.Api.dll</McApiDll>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
-  <Import Project="$(RAMJET_HOME)/../../src/scripting/managed/Mc.Scripting.Plugin.props" Condition="Exists('$(RAMJET_HOME)/../../src/scripting/managed/Mc.Scripting.Plugin.props')" />
+  <ItemGroup>
+    <PackageReference Include="Ramjet.Api" Version="1.0.0-preview.4" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Remove="obj/**;bin/**" />
     <None Remove="data/**" />

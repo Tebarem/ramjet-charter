@@ -1,0 +1,19 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Build the plugin against Ramjet.Api from nuget.org
+        run: dotnet build src/charter.csproj -c Release
+      # the tests use Ramjet API types at run time, which the compile-only Ramjet.Api package does not provide: build them only
+      - name: Tests (build)
+        run: dotnet build tests/Charter.Tests -c Release

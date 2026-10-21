@@ -8,7 +8,7 @@ a hash-chained audit log, and imports from Ramjet's `permissions.json` and LuckP
   for an out-of-server compile check). Design and ownership notes: `src/DESIGN.md`, `src/docs/`.
 - `tests/Charter.Tests/`: resolver and import tests (console app).
 
-Build and test against an engine build: set `RAMJET_HOME` to the engine's `build/bin` (the folder with `dotnet/Mc.Scripting.Api.dll`).
+The plugin builds against the public [`Ramjet.Api`](https://www.nuget.org/packages/Ramjet.Api) package (`1.0.0-preview.4` or newer) from nuget.org; no engine build is needed.
 
 ```bash
 dotnet build src/charter.csproj
